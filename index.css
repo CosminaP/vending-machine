@@ -1,0 +1,507 @@
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: #000;
+    font-family: 'Open Sans', monospace;
+    font-size: 17px;
+    background-image: url(./images/bg-body.jpg);
+}
+
+a {
+    text-decoration: none;
+}
+
+.machine {
+    max-width: 28em;
+    margin: auto;
+    background-color: #000000;
+    background: url(./images/metalic.png);
+    background-position: 30% 50%;
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+@media (min-width: 31.5em) {
+    .machine {
+        margin-top: 2em;
+    }
+}
+
+@media (min-width: 77em) {
+    .machine {
+        position: relative;
+        max-width: 56em;
+    }
+
+    .machine .section {
+        float: left;
+        width: 49.75%;
+    }
+
+    .machine .section:nth-child(n+2):not(:last-child) {
+        float: right;
+    }
+
+    .machine .section:last-child {
+        float: left;
+        clear: left;
+    }
+}
+
+.section {
+    background-image: linear-gradient(315deg, #f1f2f6 0%, #c9c6c6 74%);
+    margin-bottom: 0.25em;
+    padding: 0.875em;
+    overflow: hidden;
+}
+
+.section:last-child {
+    margin-bottom: 2em;
+}
+
+.shelves {
+    background-color: #000000;
+    /* background-image: linear-gradient(315deg, #000000 0%, #414141 74%); */
+    background: url(./images/grill.png) center;
+}
+
+.shelf {
+    display: inline-block;
+    position: relative;
+    width: 33.33333333%;
+}
+
+.shelf .detail {
+    position: relative;
+    height: 1.5em;
+    background-image: url(./images/bg-item.jpg);
+    border: 0.125em solid #242424;
+    border-top: none;
+    border-bottom: 4rem;
+    color: #242424;
+    text-shadow: 0 0 0.125em rgba(8, 10, 10, 0.75);
+    padding: 0 0.25em;
+    text-transform: uppercase;
+}
+
+.pt-resize {
+    padding-top: 3rem;
+}
+
+.shelf h3 {
+    visibility: hidden;
+    position: absolute;
+}
+
+.shelf span {
+    display: inline-block;
+    margin: 0 0.25em;
+    padding: 0 0.25em;
+    line-height: 1.5em;
+}
+
+.shelf span.code {
+    letter-spacing: 0.125em;
+}
+
+.shelf span.price {
+    position: absolute;
+    right: 0;
+}
+
+.shelf span.price:before {
+    content: '0.';
+}
+
+.shelf span.price:after {
+    content: '€';
+}
+
+.item {
+    width: 100%;
+    height: 7em;
+    background: center bottom no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    border: 6px solid #242424;
+}
+
+.item[data-item="apple"] {
+    background-image: url(https://dtgxwmigmg3gc.cloudfront.net/imagery/assets/derivations/icon/256/256/true/eyJpZCI6IjZlYWRkZDc3MDZhZTM2MTUyMzY0OWU2YTA2ZDA4MzhiIiwic3RvcmFnZSI6InB1YmxpY19zdG9yZSJ9?signature=f5ed325d6409b38a7c6550ea70558e8315fe2b2b40d25876ba792de77c8eea83);
+}
+
+.item[data-item="orange"] {
+    background-image: url(https://dtgxwmigmg3gc.cloudfront.net/imagery/assets/derivations/icon/256/256/true/eyJpZCI6ImFkNjUzNzBmYTk2M2YwODk1ZjM0MTljN2VjNDFmOWQ2Iiwic3RvcmFnZSI6InB1YmxpY19zdG9yZSJ9?signature=435b2a39a3c313364e36485439a54690089be9f655c6d2694e12515f041815b3);
+}
+
+.item[data-item="grapes"] {
+    background-image: url(https://dtgxwmigmg3gc.cloudfront.net/imagery/assets/derivations/icon/256/256/true/eyJpZCI6IjNmYTUxNTk4ZDg0MjAwZjBmMzk2NTljZmM5YWMwMmY0LmpwZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=35c525102f2cc5c418509d7849f66fe9f386e3c6386c6d1d46e3e6d12c3f3b91);
+}
+
+.item[data-item="red_salted"] {
+    background-image: url(https://www.doritos.com/sites/doritos.com/files/2018-08/new-nacho-cheese.png);
+}
+
+.item[data-item="salty_vinegar"] {
+    background-image: url(https://www.berkshirenatural.com/wp-content/uploads/2018/03/maya-kaimal-chickpea-chips.png);
+}
+
+.item[data-item="cheese_in_onion"] {
+    background-image: url(https://www.auchan.ro/public/images/h03/h82/h00/chipsuri-chio-chips-cascaval-11-200-g-8944400007198.png);
+}
+
+.item[data-item="kola"] {
+    background-image: url(https://files.gamebanana.com/img/ico/sprays/cola.png);
+}
+
+.item[data-item="diet"] {
+    background-image: url(https://lh3.googleusercontent.com/proxy/blK4ylWnu3MFXYyptrdD3xofSzOQ4trRJrtyEoE8DHCNubalEbRDItJvj6N_m6AOWefd4nySJp_A3UCqXsg);
+}
+
+.item[data-item="zero"] {
+    background-image: url(https://dtgxwmigmg3gc.cloudfront.net/imagery/assets/derivations/icon/256/256/true/eyJpZCI6IjhmZjhlMzAzM2I3YzJmZDUzYmMyODYyZTVhMzA3YWY3Iiwic3RvcmFnZSI6InB1YmxpY19zdG9yZSJ9?signature=6fca0d96b19339b19977d799ffa1f02b2216d461ab07d95562e215191fe88e9f);
+}
+
+.selection,
+.coins {
+    display: table;
+    width: 100%;
+}
+
+.selection a,
+.coins a {
+    cursor: pointer;
+}
+
+.selection>a,
+.coins>a,
+.selection>.coin,
+.coins>.coin {
+    display: table-cell;
+    text-align: center;
+    cursor: pointer;
+}
+
+.selection a {
+    width: 1em;
+    line-height: 2em;
+    font-size: 1.125em;
+    font-weight: 600;
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+    color: #ffffff;
+    -webkit-transition: background 0.2s, color 0.2s;
+    transition: background 0.2s, color 0.2s;
+}
+
+.selection a:hover {
+    background: #353b3b;
+}
+
+.selection a.active {
+    background: #6b7676;
+    color: #ffffff;
+}
+
+.selection a:first-child {
+    border-radius: 0.25em 0 0 0.25em;
+}
+
+.selection a:last-child {
+    border-radius: 0 0.25em 0.25em 0;
+}
+
+.selection a:not(:last-child) {
+    border-right: 1px solid #e1e6e6;
+}
+
+.section:nth-child(1) {
+    background-color: #000;
+    background-image: url(./images/bg-item.jpg);
+}
+
+.vending-section>h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 52px;
+    font-family: 'Titillium Web';
+}
+
+.section:last-child {
+    padding: 1rem 2rem 3rem 2rem;
+    background-image: url(./images/bg-item.jpg);
+}
+
+button[type="submit"] {
+    cursor: pointer;
+}
+
+.coin {
+    width: 33.33333333%;
+}
+
+.coin a {
+    display: block;
+    height: 5em;
+    margin: 0 5%;
+    position: relative;
+    overflow: hidden;
+    background: center center no-repeat #d6dcdc;
+    background-size: contain;
+    border-radius: 0.25em;
+    color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-shadow: inset 0 -0.5em 0 -0.25em rgba(0, 0, 0, .75);
+}
+
+.coin a:before {
+    position: absolute;
+    top: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5em;
+    background: center center no-repeat;
+    background-size: contain;
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+}
+
+.coin a.slotting:before {
+    -webkit-animation: slot 0.3s ease;
+    animation: slot 0.3s ease;
+}
+
+.coin [data-coin="50"],
+.coin [data-coin="50"]:before {
+    background-image: url(https://i.pinimg.com/originals/6d/88/3a/6d883aac48e101ae4bd8ed5c01483e81.gif);
+    background-size: 50% 75%;
+}
+
+.coin [data-coin="20"],
+.coin [data-coin="20"]:before {
+    background-image: url(https://www.euroseurope.com/sites/default/files/anv_coins/20_0.png);
+    background-size: 60% 85%;
+}
+
+.coin [data-coin="10"],
+.coin [data-coin="10"]:before {
+    background-image: url(https://img.pngio.com/image-euro-10-centpng-coin-collecting-wiki-fandom-powered-10-cent-png-425_425.png);
+    background-size: 47% 70%;
+}
+
+@-webkit-keyframes slot {
+    to {
+        top: 100%;
+        -webkit-filter: brightness(0.9);
+        filter: brightness(0.9);
+    }
+}
+
+@keyframes slot {
+    to {
+        top: 100%;
+        -webkit-filter: brightness(0.9);
+        filter: brightness(0.9);
+    }
+}
+
+form {
+    text-align: center;
+}
+
+form input,
+form button {
+    display: inline-block;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    border: none;
+    background: none;
+    border-radius: 0.125em;
+    outline: none;
+    vertical-align: middle;
+    margin: 0.0625em 0;
+}
+
+form button {
+    text-transform: uppercase;
+    font-size: 1.25em;
+    line-height: 2em;
+    padding: 0 0.75em;
+    border-radius: 0.2em;
+    background: #464e4e;
+    color: #ffffff;
+    -webkit-transition: background 0.2s;
+    transition: background 0.2s;
+}
+
+form button:hover {
+    background: #353b3b;
+}
+
+form input {
+    background: #242424;
+    color: #ccc;
+    text-shadow: 0 0 0.125em rgba(204, 204, 204, 0.75);
+    padding: 0 0.25em;
+    font-size: 2em;
+    line-height: 1.25em;
+    height: 1.25em;
+    text-transform: uppercase;
+    -moz-appearance: textfield;
+}
+
+form input::-webkit-input-placeholder {
+    color: rgba(218, 218, 218, 0.3);
+}
+
+form input::-moz-placeholder {
+    color: rgba(253, 253, 253, 0.3);
+}
+
+form input:-ms-input-placeholder {
+    color: rgba(65, 217, 217, 0.3);
+}
+
+form input::-ms-input-placeholder {
+    color: rgba(65, 217, 217, 0.3);
+}
+
+form input::placeholder {
+    color: rgba(65, 217, 217, 0.3);
+}
+
+form input[name="selection"] {
+    width: 1.75em;
+    text-align: center;
+}
+
+form input[name="coinage"] {
+    width: 2.75em;
+    text-align: right;
+}
+
+form input.invalid {
+    -webkit-animation: err 0.2s steps(2) infinite alternate;
+    animation: err 0.2s steps(2) infinite alternate;
+    text-shadow: 0 0 0.125em hsla(345, 100%, 60%, 0.75);
+}
+
+form input[type=number]::-webkit-inner-spin-button,
+form input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@-webkit-keyframes err {
+    from {
+        color: hsl(345, 100%, 90%);
+    }
+
+    to {
+        color: hsl(345, 100%, 60%);
+    }
+}
+
+@keyframes err {
+    from {
+        color: hsl(345, 100%, 90%);
+    }
+
+    to {
+        color: hsl(345, 100%, 60%);
+    }
+}
+
+.tray,
+.coin_return {
+    float: left;
+    width: 50%;
+    color: #ffffff;
+    height: 6em;
+    line-height: 6em;
+    position: relative;
+    border: 0.145em solid #4c4c4c;
+    background: linear-gradient(to bottom, #4c4c4c 0%, #595959 12%, #666666 25%, #474747 39%, #2c2c2c 50%, #000000 51%, #111111 60%, #2b2b2b 76%, #1c1c1c 91%, #131313 100%);
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.tray:before,
+.coin_return:before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f1f2f6;
+    /* background-image: linear-gradient(315deg, #f1f2f6 0%, #c9c6c6 74%); */
+    background-image: url(./images/bg-item.jpg);
+    border-radius: 4px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    -webkit-transition: height 0.4s, background 0.4s;
+    transition: height 0.4s, background 0.4s;
+}
+
+.vending .tray:before,
+.vending .coin_return:before,
+.tray:hover:before,
+.coin_return:hover:before {
+    height: 20%;
+    background: #535454;
+}
+
+.tray {
+    width: 64%;
+}
+
+.tray .item {
+    position: relative;
+    top: -100%;
+    -webkit-transition: top 0.15s 0.3s;
+    transition: top 0.15s 0.3s;
+}
+
+.vending .tray .item {
+    top: 0;
+}
+
+.coin_return {
+    width: 32%;
+    margin-left: 4%;
+}
+
+.coin_return .coin {
+    width: 100%;
+    position: absolute;
+    top: -100%;
+    -webkit-transition: top 0.15s 0.3s;
+    transition: top 0.15s 0.3s;
+}
+
+.coin_return .coin a {
+    background: none;
+    border: none;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.vending .coin_return .coin {
+    top: 0.75em;
+}
