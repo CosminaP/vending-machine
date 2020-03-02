@@ -7,4 +7,4 @@ and P(Chips). The online vending machine should have a keypad to enter the produ
 If the amount inserted is the machine is more than the price of the product, the machine will return the remained rest.
 
 
-### Technologies used: For achieving the above I used JQuery,CSS,HTML; 
+##### Technologies used: For achieving the above I used JQuery,CSS,HTML; 
