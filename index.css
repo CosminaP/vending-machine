@@ -20,7 +20,7 @@ a {
     max-width: 28em;
     margin: auto;
     background-color: #000000;
-    background: url(./images/metalic.png);
+    background: url(./images/bg-item.jpg);
     background-position: 30% 50%;
     box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
     overflow: hidden;
@@ -55,14 +55,15 @@ a {
 }
 
 .section {
-    background-image: linear-gradient(315deg, #f1f2f6 0%, #c9c6c6 74%);
+    /* background-image: linear-gradient(315deg, #f1f2f6 0%, #c9c6c6 74%); */
     margin-bottom: 0.25em;
     padding: 0.875em;
     overflow: hidden;
 }
 
 .section:last-child {
-    margin-bottom: 2em;
+    margin-top: -4px;
+    margin-bottom: 0em;
 }
 
 .shelves {
@@ -79,7 +80,7 @@ a {
 
 .shelf .detail {
     position: relative;
-    height: 1.5em;
+    height: 1.7em;
     background-image: url(./images/bg-item.jpg);
     border: 0.125em solid #242424;
     border-top: none;
@@ -123,6 +124,16 @@ a {
     content: '€';
 }
 
+.shelf[data-cat="S"]>.detail {
+    border-bottom: 3px solid #242424;
+}
+
+.shelf:last-child,
+.shelf:nth-child(7),
+.shelf:nth-child(8) {
+    border-bottom: 3px solid #242424;
+}
+
 .item {
     width: 100%;
     height: 7em;
@@ -133,39 +144,39 @@ a {
 }
 
 .item[data-item="apple"] {
-    background-image: url(https://dtgxwmigmg3gc.cloudfront.net/imagery/assets/derivations/icon/256/256/true/eyJpZCI6IjZlYWRkZDc3MDZhZTM2MTUyMzY0OWU2YTA2ZDA4MzhiIiwic3RvcmFnZSI6InB1YmxpY19zdG9yZSJ9?signature=f5ed325d6409b38a7c6550ea70558e8315fe2b2b40d25876ba792de77c8eea83);
+    background-image: url(./images/apples.png);
 }
 
 .item[data-item="orange"] {
-    background-image: url(https://dtgxwmigmg3gc.cloudfront.net/imagery/assets/derivations/icon/256/256/true/eyJpZCI6ImFkNjUzNzBmYTk2M2YwODk1ZjM0MTljN2VjNDFmOWQ2Iiwic3RvcmFnZSI6InB1YmxpY19zdG9yZSJ9?signature=435b2a39a3c313364e36485439a54690089be9f655c6d2694e12515f041815b3);
+    background-image: url(./images/oranges.png);
 }
 
 .item[data-item="grapes"] {
-    background-image: url(https://dtgxwmigmg3gc.cloudfront.net/imagery/assets/derivations/icon/256/256/true/eyJpZCI6IjNmYTUxNTk4ZDg0MjAwZjBmMzk2NTljZmM5YWMwMmY0LmpwZyIsInN0b3JhZ2UiOiJwdWJsaWNfc3RvcmUifQ?signature=35c525102f2cc5c418509d7849f66fe9f386e3c6386c6d1d46e3e6d12c3f3b91);
+    background-image: url(./images/grapes.png);
 }
 
 .item[data-item="red_salted"] {
-    background-image: url(https://www.doritos.com/sites/doritos.com/files/2018-08/new-nacho-cheese.png);
+    background-image: url(./images/nacho.jpg);
 }
 
 .item[data-item="salty_vinegar"] {
-    background-image: url(https://www.berkshirenatural.com/wp-content/uploads/2018/03/maya-kaimal-chickpea-chips.png);
+    background-image: url(./images/hickpea-chips.png);
 }
 
 .item[data-item="cheese_in_onion"] {
-    background-image: url(https://www.auchan.ro/public/images/h03/h82/h00/chipsuri-chio-chips-cascaval-11-200-g-8944400007198.png);
+    background-image: url(./images/chio.png);
 }
 
 .item[data-item="kola"] {
-    background-image: url(https://files.gamebanana.com/img/ico/sprays/cola.png);
+    background-image: url(./images/cola.png);
 }
 
 .item[data-item="diet"] {
-    background-image: url(https://lh3.googleusercontent.com/proxy/blK4ylWnu3MFXYyptrdD3xofSzOQ4trRJrtyEoE8DHCNubalEbRDItJvj6N_m6AOWefd4nySJp_A3UCqXsg);
+    background-image: url(./images/pepsi.png);
 }
 
 .item[data-item="zero"] {
-    background-image: url(https://dtgxwmigmg3gc.cloudfront.net/imagery/assets/derivations/icon/256/256/true/eyJpZCI6IjhmZjhlMzAzM2I3YzJmZDUzYmMyODYyZTVhMzA3YWY3Iiwic3RvcmFnZSI6InB1YmxpY19zdG9yZSJ9?signature=6fca0d96b19339b19977d799ffa1f02b2216d461ab07d95562e215191fe88e9f);
+    background-image: url(./images/red.png);
 }
 
 .selection,
@@ -177,6 +188,14 @@ a {
 .selection a,
 .coins a {
     cursor: pointer;
+}
+
+.py-3 {
+    padding: 3rem 0;
+}
+
+.pt-3 {
+    padding-top: 3rem;
 }
 
 .selection>a,
@@ -233,9 +252,19 @@ a {
     font-family: 'Titillium Web';
 }
 
+
+.section:first-child {
+    width: 60%;
+}
+
+.section:nth-child(2) {
+    width: 40%;
+}
+
 .section:last-child {
     padding: 1rem 2rem 3rem 2rem;
     background-image: url(./images/bg-item.jpg);
+    width: 60%;
 }
 
 button[type="submit"] {
@@ -281,22 +310,40 @@ button[type="submit"] {
     animation: slot 0.3s ease;
 }
 
-.coin [data-coin="50"],
+.coin [data-coin="50"] {
+    background: transparent;
+}
+
 .coin [data-coin="50"]:before {
-    background-image: url(https://i.pinimg.com/originals/6d/88/3a/6d883aac48e101ae4bd8ed5c01483e81.gif);
-    background-size: 50% 75%;
+
+    background-image: url(./images/50cents.jpg);
+    background-size: 65% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
-.coin [data-coin="20"],
+.coin [data-coin="20"] {
+    background: transparent;
+}
+
 .coin [data-coin="20"]:before {
-    background-image: url(https://www.euroseurope.com/sites/default/files/anv_coins/20_0.png);
-    background-size: 60% 85%;
+    background-image: url(./images/20cents.png);
+    background-size: 65% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
-.coin [data-coin="10"],
+.coin [data-coin="10"] {
+    background: transparent;
+}
+
 .coin [data-coin="10"]:before {
-    background-image: url(https://img.pngio.com/image-euro-10-centpng-coin-collecting-wiki-fandom-powered-10-cent-png-425_425.png);
-    background-size: 47% 70%;
+    background-image: url(./images/10cents.png);
+    background-size: 50% 65%;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 @-webkit-keyframes slot {
