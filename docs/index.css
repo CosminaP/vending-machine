@@ -250,6 +250,8 @@ a {
     text-align: center;
     font-size: 52px;
     font-family: 'Titillium Web';
+    text-shadow: 0 0 0.125em rgba(204, 204, 204, 0.75);
+    letter-spacing: .17rem;
 }
 
 
