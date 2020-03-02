@@ -1,2 +1,2 @@
 # vending-machine
-![GitHub Logo](/images/vending-machine.png)
+![GitHub Logo](https://github.com/CosminaP/vending-machine/blob/master/docs/images/vending-machine.png)
