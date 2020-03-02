@@ -8,4 +8,4 @@ If the amount inserted is the machine is more than the price of the product, the
 
 Technologies used: For achieving the above I used JQuery,CSS,HTML; 
 
-
+![GitHub Logo](https://github.com/CosminaP/vending-machine/blob/master/docs/images/vending_after.png)
