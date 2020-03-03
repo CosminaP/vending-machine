@@ -1,5 +1,5 @@
 # Online vending machine that simulate a real one
-![GitHub Logo](https://github.com/CosminaP/vending-machine/blob/master/docs/images/vending-machine.png)
+![Vending Machine](https://github.com/CosminaP/vending-machine/blob/master/docs/images/M-1.png)
 
 ## Description: 
 Has multiple rows and columns with different products. Also has different prices for different products with unlimited number of products per slot. As a real vending machine has two holes, the one from left for picking the product, and the one from right from picking the rest. To pick a product, use the keypad on the top right side, each keypad has a maximum of three products variations: F(Fruits), S(Soda)
@@ -8,4 +8,4 @@ If the amount inserted is the machine is more than the price of the product, the
 
 Technologies used: For achieving the above I used JQuery,CSS,HTML; 
 
-![GitHub Logo](https://github.com/CosminaP/vending-machine/blob/master/docs/images/vending_after.png)
+![Vending Machine](https://github.com/CosminaP/vending-machine/blob/master/docs/images/Machine_1.png)
