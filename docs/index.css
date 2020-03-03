@@ -22,9 +22,9 @@ a {
     background-color: #000000;
     background: url(./images/bg-item.jpg);
     background-position: 30% 50%;
-    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+    box-shadow: -7px -5px 12px 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 5px;
 }
 
 @media (min-width: 31.5em) {
