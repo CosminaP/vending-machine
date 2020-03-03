@@ -157,6 +157,7 @@ $coins.find('a').click(function () {
 
     // Animate coin
     $coin.addClass(slot_class);
+    $coin.hasClass(slot_class) ? addSound('./music/insertCoin.mp3') : '';
     // Allow new animation
     $coin.bind('webkitAnimationEnd mozAnimationEnd animationEnd', function () {
         $coin.removeClass(slot_class);
@@ -249,6 +250,16 @@ $form.submit(function (e) {
     }
 });
 
+// add Sound
+function addSound(ele) {
+    let audioElementPressKey = document.createElement('audio');
+    audioElementPressKey.setAttribute('src', ele);
+    audioElementPressKey.setAttribute('autoplay', 'autoplay');
+    $.get();
+    return audioElementPressKey.play();
+}
+
+
 // Buttons animation
 const lis = document.querySelectorAll("li");
 const a = document.querySelectorAll("li a");
@@ -259,8 +270,9 @@ for (let i = 0; i < lis.length; i++) {
         for (let i = 0; i < lis.length; i++) {
             lis[i].classList.remove("active");
             a[i].classList.remove("active-text");
+            addSound('./music/pressKey.mp3');
         }
-        this.classList.add("active");
+        this.classList.add("active").play();
         a[i].classList.add("active-text");
-    });
+    }, true);
 }
