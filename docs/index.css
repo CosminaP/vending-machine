@@ -604,3 +604,33 @@ form input[type=number]::-webkit-outer-spin-button {
 .vending .coin_return .coin {
     top: 0.75em;
 }
+
+
+.created-by {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 10%;
+    width: 200px;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+}
+
+.created-by p {
+    color: white;
+}
+
+.created-by a {
+    color: crimson;
+    text-shadow: 0 0 15px rgba(244, 0, 0, 0.71);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.created-by a:hover {
+    text-decoration: underline;
+}
