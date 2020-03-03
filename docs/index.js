@@ -1,7 +1,6 @@
-// Tame the stage
 let $window = $(window);
 let $root = $('html, body');
-// Keep hold of major sections
+// Major sections
 let $machine = $('.machine');
 let $shelves = $('.shelves');
 let $selection = $('.selection');
@@ -93,7 +92,6 @@ $.each(stock, function (i, item) {
         .attr('data-price', item.price)
         .attr('data-stock', item.count)
         .appendTo($shelf);
-    // Add human-readable elements
     let $details = $('<div>')
         .addClass('detail')
         .appendTo($shelf);
@@ -105,9 +103,7 @@ $.each(stock, function (i, item) {
         .appendTo($details);
 });
 
-// Make selecting as annoying as a real machine
 $selection.find('a').click(function () {
-    // Collect useful info
     let $selected = $(this);
     let value = $selected.text();
     let current = $input_selection.val();
@@ -118,7 +114,6 @@ $selection.find('a').click(function () {
     $tray.empty();
     $return.empty();
 
-    // First press
     if (!prev.length) {
         $selected.addClass('active');
         $input_selection.val(value);
@@ -175,7 +170,7 @@ $coins.find('a').click(function () {
 
 // On Vend
 $form.submit(function (e) {
-    // Don’t submit normally
+    // prevent submission
     e.preventDefault();
     // Get useful info
     let code = $input_selection.val().toUpperCase();
@@ -183,7 +178,7 @@ $form.submit(function (e) {
     let price = (parseInt(item.attr('data-price')) / 100);
     let coins = parseFloat($input_coinage.val());
 
-    // No item was found
+    // Item not found
     if (!item.length) {
         $input_selection.addClass('invalid');
         setTimeout(function () {
@@ -204,15 +199,15 @@ $form.submit(function (e) {
         let change_returned = parseFloat(change.toFixed(1));
 
 
-        // Reset UI
+        // Reset values
         $selection.find('a').removeClass('active');
         $input_selection.val('');
         $input_coinage.val('');
 
-        // Put item in tray
+        // Item is placed in tray
         item.find('.item').first().clone().appendTo($tray);
 
-        // Return any fifties
+        // Returns 50
         if (change_returned / .5 >= 1) {
             let fifties = parseInt(change_returned / .5);
             change_returned -= (fifties * 0.5);
@@ -221,7 +216,7 @@ $form.submit(function (e) {
             }
             change_returned = parseFloat(change_returned.toFixed(1));
         }
-        // Return any twenties
+        // Returns 20
         if (change_returned / .2 >= 1) {
             let twenties = parseInt(change_returned / .2);
             change_returned -= (twenties * 0.2);
@@ -230,7 +225,7 @@ $form.submit(function (e) {
             }
             change_returned = parseFloat(change_returned.toFixed(1));
         }
-        // Return any tens
+        // Returns 10
         if (change_returned / .1 >= 1) {
             let tens = parseInt(change_returned / .1);
             change_returned -= (tens * 0.1);
