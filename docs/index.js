@@ -270,7 +270,7 @@ for (let i = 0; i < lis.length; i++) {
         for (let i = 0; i < lis.length; i++) {
             lis[i].classList.remove("active");
             a[i].classList.remove("active-text");
-            addSound('./music/pressKey.mp3');
+            // addSound('./music/pressKey.mp3');
         }
         this.classList.add("active").play();
         a[i].classList.add("active-text");
