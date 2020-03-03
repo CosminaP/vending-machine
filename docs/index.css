@@ -596,7 +596,7 @@ form input[type=number]::-webkit-outer-spin-button {
 
 .created-by {
     margin: auto;
-    padding-top: 3rem;
+    padding: 4rem 0;
     width: 100%;
     text-align: center;
     font-size: 10px;
