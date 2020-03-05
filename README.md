@@ -10,5 +10,5 @@ Technologies used: For achieving the above I used JQuery,CSS,HTML;
 
 ![Vending Machine](https://github.com/CosminaP/vending-machine/blob/master/docs/images/Machine_1.png)
 
-##### Project under construction to migrate from jQuery to React, following the Arhitecture below:
+### Project is under construction to migrate from jQuery to React, following the Arhitecture below:
 ![Vending Machine](https://github.com/CosminaP/vending-machine/blob/master/docs/images/Project-Architecture.png)
