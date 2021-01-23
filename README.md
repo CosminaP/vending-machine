@@ -1,4 +1,4 @@
-# Online vending machine that simulate a physical vending machine
+# Online vending machine that simulates a physical vending machine
 ![Vending Machine](https://github.com/CosminaP/vending-machine/blob/master/docs/images/M-1.png)
 
 ## Description: 
